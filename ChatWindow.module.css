@@ -9,7 +9,7 @@
   background-color: #171717;
   color: white;
   font-family: Arial, sans-serif;
-  position: relative; /* Add this for positioning context */
+  position: relative;
 }
 
 .messages {
@@ -19,18 +19,17 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  scrollbar-width: thin;           /* Firefox */
-  scrollbar-color: #8888 #222;     /* Firefox: thumb and track */
+  scrollbar-width: thin;
+  scrollbar-color: #8888 #222;
 }
 
-/* Chrome, Edge, Safari */
 .messages::-webkit-scrollbar {
-  width: 6px;
+  width: 2px;
   background: #222;
 }
 
 .messages::-webkit-scrollbar-thumb {
-  background: rgba(136,136,136,0.4); /* Low opacity gray */
+  background: rgba(136,136,136,0.4);
   border-radius: 4px;
 }
 
@@ -38,18 +37,19 @@
   padding: 10px;
   border-radius: 10px;
   max-width: 60%;
-  /* Remove margin here */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
 }
 
 .sent {
   background: #ff6900;
   color: white;
-  align-self: flex-end;      /* Add this */
-  margin-left: auto;         /* Keep this */
+  align-self: flex-end;
+  margin-left: auto;
   margin-right: 0;
   margin-top: 5px;
   margin-bottom: 5px;
-  text-align: right;
 }
 
 .received {
@@ -60,13 +60,11 @@
   margin-left: 0;
   margin-top: 5px;
   margin-bottom: 5px;
-  text-align: left;
-}
+  }
 
-/* Add this class for the notification */
 .newMessages {
   position: absolute;
-  bottom: 64px; /* Position above input area */
+  bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
   background: #ff6900;
